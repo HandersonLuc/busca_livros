@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Seleção de Dados</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+        body {
+            background-color: #ffffff;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+                Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+            color: #6b7280;
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+        main {
+            max-width: 600px;
+            width: 100%;
+            padding: 3rem;
+            box-shadow: 0 4px 8px rgb(0 0 0 / 0.05);
+            border-radius: 0.75rem;
+        }
+        h1 {
+            font-weight: 700;
+            font-size: 3rem;
+            color: #111827;
+            margin-bottom: 1.5rem;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        label {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #374151;
+            margin-bottom: 0.4rem;
+            display: block;
+        }
+        select, button {
+            width: 100%;
+            font-size: 1rem;
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            background: #ffffff;
+            color: #111827;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            appearance: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        select:focus, button:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgb(59 130 246 / 0.5);
+        }
+        button {
+            font-weight: 700;
+            background-color: #111827;
+            color: white;
+            border: none;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        button:hover, button:focus {
+            background-color: #2563eb;
+        }
+        @media (max-width: 600px) {
+            main {
+                padding: 2rem 1rem;
+            }
+            h1 {
+                font-size: 2.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Selecione Os Parâmetros</h1>
+    <form id="formulario" method="POST" action="processar.php" novalidate>
+        <div>
+            <label for="matriz">Matriz Curricular:</label>
+            <select id="matriz" name="matriz" required>
+                <option value="" disabled selected>Selecione a matriz</option>
+                <option value="41.01.005">41.01.005</option>
+                <option value="41.01.006">41.01.006</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="periodo">Período Letivo:</label>
+            <select id="periodo" name="periodo" required>
+                <option value="" disabled selected>Selecione o período</option>
+                <option value="2023-1">2023-1</option>
+                <option value="2023-2">2023-2</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="disciplina">Disciplina:</label>
+            <select id="disciplina" name="disciplina" required>
+                <option value="" disabled selected>Selecione a disciplina</option>
+                <option value="programacao_computadores">Programação de Computadores</option>
+                <option value="geometria_analitica">Geometria Analítica</option>
+                <option value="estrutura_de_dados">Estrutura de Dados</option>
+                <option value="algebra_linear">Álgebra Linear</option>
+                <option value="programacao_orientada_a_objetos">Programação Orientada a Objetos</option>
+                <option value="equacoes_diferenciais">Equações Diferenciais</option>
+                <option value="calculo_4">Cálculo Diferencial</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="formato">Formato:</label>
+            <select id="formato" name="formato" required>
+                <option value="" disabled selected>Selecione o formato</option>
+                <option value="bib">Bib</option>
+                <option value="html">HTML</option>
+            </select>
+        </div>
+
+        <button type="submit">Enviar</button>
+    </form>
+</main>
+</body>
+</html>
+
